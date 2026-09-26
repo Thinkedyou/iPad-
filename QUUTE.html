@@ -1,0 +1,2039 @@
+<div class="form-container">
+    <div class="qc-header">
+        <div class="qc-header-inner">
+            <div class="qc-header-left">
+                <span class="qc-eyebrow">Welcome to the Quote Center</span>
+
+                <h1>Let's Find the Right<br><em>Coverage for You</em></h1>
+
+                <p>Getting started is easy. Choose the coverage you're looking for and answer a few quick questions. We'll use your information to help identify the right options for your needs.</p>
+
+                <p class="qc-bold-line">Sandoval Agency will review your request and follow up personally.</p>
+
+                <div class="qc-feature-row">
+                    <div class="qc-feature">
+                        <span class="qc-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                        </span>
+                        <span class="qc-feature-text">Takes about 2 minutes</span>
+                    </div>
+                    <div class="qc-feature">
+                        <span class="qc-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+                        </span>
+                        <span class="qc-feature-text">No obligation</span>
+                    </div>
+                    <div class="qc-feature">
+                        <span class="qc-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                        </span>
+                        <span class="qc-feature-text">Follow-up</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qc-header-right">
+                <div class="qc-image-frame">
+                    <div class="qc-image"></div>
+                   
+                    <div class="qc-float-card">
+                        <div class="qc-float-head">
+                            <span>Your Quote Journey</span>
+                            <em>4 steps</em>
+                        </div>
+                        <ul class="qc-float-steps">
+                            <li class="active"><span>01</span> Choose Coverage</li>
+                            <li><span>02</span> Share Details</li>
+                            <li><span>03</span> Review</li>
+                            <li><span>04</span> Submit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="progress-bar" id="progressBar">
+        <div class="progress-step" data-step="1">
+            <div class="step-circle"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></div>
+            <div class="step-text"><span class="step-label">Coverage</span></div>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="2">
+            <div class="step-circle"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+            <div class="step-text"><span class="step-label">Details</span><span class="step-sub" id="detailsSubLabel"></span></div>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="3">
+            <div class="step-circle"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <div class="step-text"><span class="step-label">Review</span></div>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-step" data-step="4">
+            <div class="step-circle"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg></div>
+            <div class="step-text"><span class="step-label">Submit</span></div>
+        </div>
+    </div>
+
+    <form id="quoteForm">
+        <input type="hidden" name="Insurance_Category" id="mainCategory" value="" required>
+
+        <!-- PAGE 1: COVERAGE -->
+        <div class="page" id="page-coverage">
+            <div id="parentGrid" class="parent-grid"></div>
+
+            <div id="subGrid" class="sub-grid" style="display:none;">
+                <button type="button" class="back-link" id="backToParent">&larr; Back to categories</button>
+                <h3 class="sub-grid-title" id="subGridTitle"></h3>
+                <div class="category-grid" id="subCards"></div>
+            </div>
+
+        </div>
+
+        <!-- PAGE 2: DETAILS -->
+        <div class="page" id="page-details" style="display:none;">
+
+            <div class="selection-breadcrumb" id="detailsBreadcrumb"></div>
+            <div class="mini-progress" id="miniProgress"></div>
+
+            <div class="detail-part" data-part="1">
+                <div class="section section-card conditional" data-groups="business,commercial_auto,comm_liability,workers_comp,bonds,umbrella">
+                    <h3 class="icon-header"><span class="section-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="1.5"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></span><span class="section-header-text"><span class="section-header-title">Business Information</span><span class="section-header-sub">Tell us about your business.</span></span></h3>
+                    <div class="grid">
+                        <div class="input-group full-width"><input type="text" name="Business_Name" placeholder=" " required disabled><label>Business Name</label></div>
+                        <div class="input-group"><input type="text" name="DBA" placeholder=" " disabled><label>DBA  </label></div>
+                        <div class="input-group">
+                            <input type="text" name="FEIN" placeholder=" " disabled><label>FEIN / Tax ID  </label>
+                            <small class="field-hint">Only needed if you'd like a faster, more accurate quote — not required to get started.</small>
+                        </div>
+                        <div class="input-group full-width"><input type="text" name="Business_Address" placeholder=" " required disabled><label>Business Street Address</label></div>
+                        <div class="input-group"><input type="text" name="Business_City" id="businessCityField" placeholder=" " required disabled><label>Business City</label></div>
+                        <div class="input-group">
+                            <input type="text" name="Business_Zip" id="businessZipCode" class="numeric-only" inputmode="numeric" placeholder=" " required disabled maxlength="5"><label>Business ZIP Code</label>
+                            <small id="businessZipError" style="color:#C7002C; display:none; font-size:11px; font-weight:bold;">Error: Oklahoma ZIP only (73xxx/74xxx).</small>
+                        </div>
+                        <div class="input-group"><input type="text" name="Business_State" value="Oklahoma" readonly disabled style="background:#f9f9f9; color:#666;"><label>Business State</label></div>
+                        <div class="input-group"><input type="tel" name="Business_Phone" class="numeric-only" inputmode="numeric" placeholder=" " required disabled><label>Business Phone</label></div>
+                        <div class="input-group"><input type="email" name="Business_Email" placeholder=" " required disabled><label>Business Email</label></div>
+                        <div class="input-group">
+                            <select name="Years_in_Business" disabled required>
+                                <option value="" selected disabled>Select...</option>
+                                <option value="Less than 1 year">Less than 1 year</option>
+                                <option value="1-3 years">1–3 years</option>
+                                <option value="4-10 years">4–10 years</option>
+                                <option value="10+ years">10+ years</option>
+                            </select>
+                            <label>Years in Business</label>
+                        </div>
+                        <div class="input-group">
+                            <select name="Industry_Type" id="industrySelect" onchange="toggleIndustryOther(this)" disabled>
+                                <option value="" selected disabled>Select...</option>
+                                <option value="Retail">Retail</option>
+                                <option value="Restaurant / Food Service">Restaurant / Food Service</option>
+                                <option value="Construction / Contracting">Construction / Contracting</option>
+                                <option value="Professional Services">Professional Services (Legal, Accounting, Consulting)</option>
+                                <option value="Healthcare / Medical">Healthcare / Medical</option>
+                                <option value="Real Estate">Real Estate</option>
+                                <option value="Manufacturing">Manufacturing</option>
+                                <option value="Transportation / Trucking">Transportation / Trucking</option>
+                                <option value="Technology / IT">Technology / IT</option>
+                                <option value="Hospitality">Hospitality (Hotel / Lodging)</option>
+                                <option value="Automotive">Automotive</option>
+                                <option value="Agriculture">Agriculture</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <label>Industry / Type  </label>
+                        </div>
+                        <div id="industryOtherDiv" class="input-group full-width" style="display:none;">
+                            <input type="text" name="Industry_Other_Detail" placeholder=" " disabled><label>Please describe your industry</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section conditional" data-groups="business,commercial_auto,comm_liability,workers_comp,bonds,umbrella" style="margin-top:-10px;">
+                    <label class="checkbox-inline"><input type="checkbox" id="sameAsBusinessCheck" onchange="toggleSameAsBusiness(this)" disabled> Use business phone and email for this contact</label>
+                    <small style="display:block; color:#999; font-size:11px; margin:-2px 0 10px 2px;">We'll use the business phone and email you provided above.</small>
+                </div>
+
+                <div class="section section-card base-section">
+                    <h3 class="icon-header"><span class="section-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span><span class="section-header-text"><span class="section-header-title" id="contactHeader">Contact Information</span></span></h3>
+                    <p id="contactSubtitle" style="display:none; margin:-10px 0 16px; font-size:13px; color:#888;">Who should we contact about this policy?</p>
+                    <div class="grid">
+                        <div class="input-group conditional full-width" data-groups="farm">
+                            <input type="text" name="Farm_Address" placeholder=" " required disabled><label>Farm Address</label>
+                        </div>
+                        <div class="input-group"><input type="text" name="First_Name" placeholder=" " required><label>First Name</label></div>
+                        <div class="input-group"><input type="text" name="Last_Name" placeholder=" " required><label>Last Name</label></div>
+
+                        <div class="input-group conditional" data-groups="auto,home_auto,motorcycle,rv,commercial_auto,farm,classic_car,off_road">
+                            <input type="date" name="Driver_DOB" required disabled><label>Date of Birth</label>
+                        </div>
+                        <div class="input-group conditional" data-groups="auto,home_auto,motorcycle,rv,commercial_auto,farm,classic_car,off_road">
+                            <input type="text" name="Driver_License" placeholder=" " required disabled><label>Driver's License</label>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <input type="text" name="Home_Address" id="homeAddressField" placeholder=" " required><label>Home / Street Address</label>
+                        </div>
+
+                        <div class="input-group"><input type="tel" name="Phone" id="phoneField" class="numeric-only" inputmode="numeric" placeholder=" " required><label>Phone Number</label></div>
+                        <div class="input-group"><input type="email" name="Email" id="emailField" placeholder=" " required><label>Email Address</label></div>
+                        <div class="input-group">
+                            <select name="Preferred_Contact" required>
+                                <option value="" selected disabled>Select Method...</option>
+                                <option value="Email">Email</option>
+                                <option value="Call">Call</option>
+                                <option value="Text">Text</option>
+                            </select>
+                            <label>Preferred Contact Method</label>
+                        </div>
+                        <div class="input-group"><input type="text" name="City" id="cityField" placeholder=" " required><label>City</label></div>
+                        <div class="input-group"><input type="text" name="Zip_Code" id="zipCode" class="numeric-only" inputmode="numeric" placeholder=" " required maxlength="5"><label>ZIP Code</label><small id="zipError" style="color:#C7002C; display:none; font-size:11px; font-weight:bold; margin-top:5px;">Error: Oklahoma ZIP only (73xxx/74xxx).</small></div>
+                        <div class="input-group"><input type="text" name="State" value="Oklahoma" readonly style="background:#f9f9f9; color:#666;"><label>State</label></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-part" data-part="2">
+                <div class="section section-card conditional" data-groups="renters">
+                    <h3 class="icon-header"><span class="section-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg></span><span class="section-header-text"><span class="section-header-title">Rental Property</span></span></h3>
+                    <div class="grid">
+                        <div class="input-group">
+                            <select name="Renter_Property_Type" disabled required>
+                                <option value="" selected disabled>Select...</option>
+                                <option value="Apartment">Apartment</option>
+                                <option value="House">House</option>
+                                <option value="Condo">Condo</option>
+                                <option value="Townhouse">Townhouse</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <label>Property Type <span class="field-info" title="Type of home you're renting">i</span></label>
+                        </div>
+                        <div class="input-group"><input type="text" name="Renter_Unit" placeholder=" " disabled><label>Unit / Apartment #  </label></div>
+                        <div class="input-group"><input type="text" name="Renter_Floor_Level" placeholder=" " disabled><label>Floor Level  </label></div>
+                        <div class="input-group"><input type="date" name="Renter_Move_In_Date" disabled required><label>Move-in Date (or coverage start date)</label></div>
+                        <div class="input-group"><input type="text" name="Renter_Occupants" class="numeric-only" inputmode="numeric" placeholder=" " disabled required><label>Number of Occupants</label></div>
+                        <div class="input-group">
+                            <label>Do you have any pets? <span class="field-info" title="Let us know about pets in the household">i</span></label>
+                            <div class="radio-row">
+                                <label class="radio-option"><input type="radio" name="Renter_Pets" value="Yes" disabled required> Yes</label>
+                                <label class="radio-option"><input type="radio" name="Renter_Pets" value="No" disabled> No</label>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Smoke Detectors in Unit? <span class="field-info" title="Working smoke detectors installed">i</span></label>
+                            <div class="radio-row">
+                                <label class="radio-option"><input type="radio" name="Renter_Smoke_Detectors" value="Yes" disabled required> Yes</label>
+                                <label class="radio-option"><input type="radio" name="Renter_Smoke_Detectors" value="No" disabled> No</label>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Security System in Unit? <span class="field-info" title="Alarm or monitored security system">i</span></label>
+                            <div class="radio-row">
+                                <label class="radio-option"><input type="radio" name="Renter_Security_System" value="Yes" disabled required> Yes</label>
+                                <label class="radio-option"><input type="radio" name="Renter_Security_System" value="No" disabled> No</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section section-card conditional" data-groups="renters">
+                    <h3 class="icon-header"><span class="section-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v2h6V3"/><path d="M8 11h8M8 15h5"/></svg></span><span class="section-header-text"><span class="section-header-title">Other Details</span></span></h3>
+                    <div class="grid">
+                        <div class="input-group">
+                            <label>Was there a security deposit required?</label>
+                            <div class="radio-row">
+                                <label class="radio-option"><input type="radio" name="Renter_Security_Deposit" value="Yes" disabled> Yes</label>
+                                <label class="radio-option"><input type="radio" name="Renter_Security_Deposit" value="No" disabled> No</label>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Is your residence in a gated community?</label>
+                            <div class="radio-row">
+                                <label class="radio-option"><input type="radio" name="Renter_Gated_Community" value="Yes" disabled> Yes</label>
+                                <label class="radio-option"><input type="radio" name="Renter_Gated_Community" value="No" disabled> No</label>
+                            </div>
+                        </div>
+                        <div class="input-group full-width">
+                            <label>Additional Notes  </label>
+                            <textarea name="Renter_Additional_Notes" disabled style="width:100%; height:70px; border:1px solid #ccc; border-radius:8px; padding:10px; font-family:inherit;" placeholder="Tell us anything else that may help us find the right coverage for you..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section section-card conditional" data-groups="condo,landlord,flood,earthquake">
+                    <h3 class="icon-header"><span class="section-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"/></svg></span><span class="section-header-text"><span class="section-header-title">Property Details</span></span></h3>
+                    <div class="grid">
+                        <div class="input-group">
+                            <select name="Property_Type" disabled required>
+                                <option value="" selected disabled>Select...</option>
+                                <option value="Single Family Rental">Single Family Rental</option>
+                                <option value="Multi-Family Rental (2-4 units)">Multi-Family Rental (2-4 units)</option>
+                                <option value="Condo Rental">Condo Rental</option>
+                                <option value="Townhouse Rental">Townhouse Rental</option>
+                                <option value="Apartment Building">Apartment Building</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <label>Property Type <span class="field-info" title="Type of property being insured">i</span></label>
+                        </div>
+                        <div class="input-group">
+                            <select name="Number_of_Units" disabled required>
+                                <option value="" selected disabled>Select...</option>
+                                <option value="1 Unit">1 Unit</option>
+                                <option value="2 Units">2 Units</option>
+                                <option value="3 Units">3 Units</option>
+                                <option value="4 Units">4 Units</option>
+                                <option value="5+ Units">5+ Units</option>
+                            </select>
+                            <label>Number of Units (Including the subject property)</label>
+                        </div>
+                        <div class="input-group">
+                            <label>Is the property currently occupied? <span class="field-info" title="Tell us if the property currently has a tenant">i</span></label>
+                            <div class="radio-row">
+                                <label class="radio-option"><input type="radio" name="Property_Occupied" value="Yes" disabled required> Yes</label>
+                                <label class="radio-option"><input type="radio" name="Property_Occupied" value="No" disabled> No</label>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <select name="Rental_Type" disabled required>
+                                <option value="" selected disabled>Select...</option>
+                                <option value="Long-term Rental">Long-term Rental</option>
+                                <option value="Short-term Rental">Short-term Rental</option>
+                                <option value="Vacation Rental">Vacation Rental</option>
+                                <option value="Seasonal Rental">Seasonal Rental</option>
+                            </select>
+                            <label>Rental Type <span class="field-info" title="How the property is typically rented out">i</span></label>
+                        </div>
+                        <div class="input-group"><input type="text" name="Rental_Income" class="numeric-only" inputmode="numeric" placeholder=" " disabled><label>Monthly Rental Income  </label></div>
+                        <div class="input-group"><input type="text" name="HOA_Name" placeholder=" " disabled><label>HOA Name  </label></div>
+                        <div class="input-group">
+                            <select name="Foundation_Type" disabled>
+                                <option value="" selected disabled>Select...</option>
+                                <option value="Slab">Slab</option>
+                                <option value="Crawl Space">Crawl Space</option>
+                                <option value="Basement">Basement</option>
+                                <option value="Pier & Beam">Pier & Beam</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <label>Foundation Type  </label>
+                        </div>
+                        <div class="input-group">
+                            <select name="Flood_Zone" disabled>
+                                <option value="" selected disabled>Select...</option>
+                                <option value="Zone X (Minimal Risk)">Zone X (Minimal Risk)</option>
+                                <option value="Zone A (High Risk)">Zone A (High Risk)</option>
+                                <option value="Zone AE (High Risk)">Zone AE (High Risk)</option>
+                                <option value="Zone V (Coastal High Risk)">Zone V (Coastal High Risk)</option>
+                                <option value="Unknown">Unknown</option>
+                            </select>
+                            <label>Flood Zone  </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section section-card conditional" data-groups="home,home_auto,business,farm,condo,landlord,earthquake">
+                    <h3 class="icon-header"><span class="section-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></span><span class="section-header-text"><span class="section-header-title">Building Information</span></span></h3>
+                    <div class="grid">
+                        <div class="input-group"><input type="text" name="Year_Built" class="numeric-only" inputmode="numeric" maxlength="4" placeholder=" " disabled><label>Year Built  </label></div>
+                        <div class="input-group"><input type="text" name="Square_Footage" class="numeric-only" inputmode="numeric" placeholder=" " disabled><label>Square Footage  </label></div>
+                        <div class="input-group"><input type="text" name="Roof_Year" class="numeric-only" inputmode="numeric" maxlength="4" placeholder=" " disabled><label>Roof Year  </label></div>
+                        <div class="input-group">
+                            <select name="Construction_Type" disabled>
+                                <option value="" selected disabled>Select...</option>
+                                <option value="Wood Frame">Wood Frame</option>
+                                <option value="Brick">Brick</option>
+                                <option value="Concrete Block">Concrete Block</option>
+                                <option value="Steel Frame">Steel Frame</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <label>Construction Type  </label>
+                        </div>
+                        <div class="input-group">
+                            <label>Electrical Updates? <span class="field-info" title="Let us know if the wiring or panel has been updated">i</span></label>
+                            <div class="radio-row">
+                                <label class="radio-option"><input type="radio" name="Electrical_Updates" value="Yes" onchange="toggleElectrical(this)" disabled required> Yes</label>
+                                <label class="radio-option"><input type="radio" name="Electrical_Updates" value="No" onchange="toggleElectrical(this)" disabled> No</label>
+                            </div>
+                        </div>
+                        <div id="electricalYearDiv" class="input-group" style="display:none;">
+                            <input type="text" name="Electrical_Update_Year" class="numeric-only" inputmode="numeric" maxlength="4" placeholder=" " disabled><label>Year Electrical Updates Completed  </label>
+                        </div>
+                    </div>
+                    <p style="display:flex; align-items:center; gap:6px; font-size:12px; color:#999; margin:14px 2px 0;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#999" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+                        These details help us find the right coverage and may affect your rates.
+                    </p>
+                </div>
+
+                <div class="section section-card conditional" data-groups="umbrella">
+                    <h3 class="icon-header"><span class="section-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 0 1 9 8H3a9 9 0 0 1 9-8z"/><path d="M12 11v8a2 2 0 0 1-2 2"/><path d="M12 3v1"/></svg></span><span class="section-header-text"><span class="section-header-title">Umbrella Coverage Preferences</span></span></h3>
+                    <div class="grid">
+                        <div class="input-group">
+                            <label>Do you currently have a Home or Renters policy? <span class="field-info" title="Underlying home/renters coverage">i</span></label>
+                            <div class="radio-row">
+                                <label class="radio-option"><input type="radio" name="Umbrella_Home_Policy" value="Yes" disabled required> Yes</label>
+                                <label class="radio-option"><input type="radio" name="Umbrella_Home_Policy" value="No" disabled> No</label>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Do you currently have an Auto policy? <span class="field-info" title="Underlying auto coverage">i</span></label>
+                            <div class="radio-row">
+                                <label class="radio-option"><input type="radio" name="Umbrella_Auto_Policy" value="Yes" disabled required> Yes</label>
+                                <label class="radio-option"><input type="radio" name="Umbrella_Auto_Policy" value="No" disabled> No</label>
+                            </div>
+                        </div>
+                        <div class="input-group"><input type="text" name="Umbrella_Vehicle_Count" class="numeric-only" inputmode="numeric" placeholder=" " disabled><label>Number of Vehicles in Household  </label></div>
+                        <div class="input-group"><input type="text" name="Umbrella_Driver_Count" class="numeric-only" inputmode="numeric" placeholder=" " disabled><label>Number of Licensed Drivers  </label></div>
+                        <div class="input-group">
+                            <select name="Umbrella_Coverage_Amount" disabled required>
+                                <option value="" selected disabled>Select...</option>
+                                <option value="$1,000,000">$1,000,000</option>
+                                <option value="$2,000,000">$2,000,000</option>
+                                <option value="$3,000,000">$3,000,000</option>
+                                <option value="$5,000,000+">$5,000,000+</option>
+                            </select>
+                            <label>Desired Umbrella Coverage <span class="field-info" title="How much extra liability protection you'd like">i</span></label>
+                        </div>
+                        <div class="input-group">
+                            <label>Do you own rental property? <span class="field-info" title="Any additional properties you rent out">i</span></label>
+                            <div class="radio-row">
+                                <label class="radio-option"><input type="radio" name="Umbrella_Rental_Property" value="Yes" disabled> Yes</label>
+                                <label class="radio-option"><input type="radio" name="Umbrella_Rental_Property" value="No" disabled> No</label>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Any watercraft or recreational vehicles? <span class="field-info" title="Boats, ATVs, RVs, etc.">i</span></label>
+                            <div class="radio-row">
+                                <label class="radio-option"><input type="radio" name="Umbrella_Watercraft_RV" value="Yes" disabled> Yes</label>
+                                <label class="radio-option"><input type="radio" name="Umbrella_Watercraft_RV" value="No" disabled> No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="section-note">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#999" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+                        These details help us size the right umbrella policy on top of your existing coverage.
+                    </p>
+                </div>
+
+                <div class="section section-card conditional" data-groups="auto,home_auto,motorcycle,rv,commercial_auto,business,farm,boat,classic_car,off_road">
+                    <h3 class="icon-header"><span class="section-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><rect x="2" y="13" width="20" height="5" rx="1.5"/><circle cx="7" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg></span><span class="section-header-text"><span class="section-header-title" id="vehicleSectionTitle">Vehicle</span></span></h3>
+                    <div id="vehicleWrapper"></div>
+                    <button type="button" id="addVehicleBtn" class="add-btn">+ Another vehicle</button>
+                    <p class="section-note">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#999" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>
+                        Add every vehicle you'd like covered. You can include as many as you need.
+                    </p>
+                </div>
+            </div>
+
+            <div class="detail-part" data-part="3">
+                <div class="section section-card base-section">
+                    <h3 class="icon-header"><span class="section-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></span><span class="section-header-text"><span class="section-header-title">Coverage &amp; History</span></span></h3>
+                    <div class="grid">
+                        <div class="input-group"><select name="Currently_Insured" onchange="toggleCurrentCarrier(this)" required><option value="" selected disabled>Select...</option><option value="Yes">Yes</option><option value="No">No</option></select><label>Currently Insured?</label></div>
+                        <div id="currentCarrierDiv" class="input-group" style="display:none;"><input type="text" name="Current_Carrier" placeholder=" " disabled><label>Current Carrier</label></div>
+                        <div class="input-group full-width"><select name="Claims_5_Years" onchange="toggleClaims(this)" required><option value="" selected disabled>Select Count...</option><option value="0">None</option><option value="1">1</option><option value="2">2</option><option value="3+">3 or more</option></select><label>Claims (Last 5 Years)</label></div>
+                        <div id="claimsDescDiv" class="input-group full-width" style="display:none;"><input type="text" name="Claims_Description" disabled><label>Describe Claims</label></div>
+                        <div class="input-group full-width"><textarea name="Additional_Notes" style="width:100%; height:80px; border:1px solid #ccc; border-radius:8px; padding:10px; font-family:inherit;" placeholder="Additional notes..."></textarea></div>
+                        <div class="full-width"><label style="font-size:13px; color:#555; display:flex; gap:8px; align-items:flex-start;"><input type="checkbox" name="Agreement" required style="margin-top:3px;"> I agree to be contacted about my Quote</label></div>
+                    </div>
+                </div>
+
+                <div class="section conditional" data-groups="general" style="background:#f9f9f9; padding:20px; border-radius:12px; margin-top:10px; border:1px solid #eee;">
+                    <h3 class="icon-header" style="margin-top:0;"><span class="section-icon-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v2h6V3"/><path d="M8 11h8M8 15h5"/></svg></span><span class="section-header-text"><span class="section-header-title">I'm interested in</span></span></h3>
+                    <div class="grid interest-grid">
+                        <label><input type="checkbox" name="Interest[]" value="Home"> Home</label>
+                        <label><input type="checkbox" name="Interest[]" value="Auto"> Auto</label>
+                        <label><input type="checkbox" name="Interest[]" value="RV"> RV</label>
+                        <label><input type="checkbox" name="Interest[]" value="Business"> Business</label>
+                        <label><input type="checkbox" name="Interest[]" value="Farm"> Farm</label>
+                        <label><input type="checkbox" name="Interest[]" value="Comm. Auto"> Comm. Auto</label>
+                        <label><input type="checkbox" name="Interest[]" value="Motorcycle"> Motorcycle</label>
+                        <label><input type="checkbox" name="Interest[]" value="Renters"> Renters</label>
+                        <label><input type="checkbox" name="Interest[]" value="Boat"> Boat</label>
+                        <label><input type="checkbox" name="Interest[]" value="Condo"> Condo</label>
+                        <label><input type="checkbox" name="Interest[]" value="Landlord"> Landlord</label>
+                        <label><input type="checkbox" name="Interest[]" value="Flood"> Flood</label>
+                        <label><input type="checkbox" name="Interest[]" value="Classic Car"> Classic Car</label>
+                        <label><input type="checkbox" name="Interest[]" value="Umbrella"> Umbrella</label>
+                        <label><input type="checkbox" name="Interest[]" value="Earthquake"> Earthquake</label>
+                        <label><input type="checkbox" name="Interest[]" value="Off-Road"> Off-Road</label>
+                        <label><input type="checkbox" name="Interest[]" value="Gi Liability"> GL Liability</label>
+                        <label><input type="checkbox" name="Interest[]" value="Workers Comp"> Workers' Compensation</label>
+                        <label><input type="checkbox" name="Interest[]" value="Bonds"> Bonds</label>
+                        <label><input type="checkbox" name="Interest[]" value="Other"> Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="part-nav">
+                <button type="button" class="btn-secondary" id="partBackBtn">&larr; Back</button>
+                <button type="button" class="btn-primary" id="partContinueBtn">Continue &rarr;</button>
+            </div>
+        </div>
+
+        <!-- PAGE 3: REVIEW -->
+        <div class="page" id="page-review" style="display:none;">
+            <h3 class="review-title">Review your request</h3>
+            <div id="reviewCategoryBadge" class="selection-breadcrumb"></div>
+            <div id="reviewFieldsWrap" class="review-fields"></div>
+            <div class="part-nav">
+                <button type="button" class="btn-secondary" id="editAnswersBtn">&larr; Edit answers</button>
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Request</button>
+            </div>
+        </div>
+
+        <div id="formMsg" style="text-align:center; margin-top:15px; font-weight:bold; color:#C7002C;"></div>
+    </form>
+
+    <div id="quickContactWrap">
+        <div class="quick-contact-divider"><span>or just get in touch directly</span></div>
+        <div id="quickContactPanel" class="quick-contact-panel">
+            <p class="quick-contact-sub">Not sure which category fits? Leave your information below 
+and an agent will reach out to help you directly. 
+No additional forms needed.</p>
+            <div class="grid">
+                <div class="input-group full-width"><input type="text" id="qcName" placeholder=" "><label>Full Name</label></div>
+                <div class="input-group"><input type="email" id="qcEmail" placeholder=" "><label>Email Address</label></div>
+                <div class="input-group"><input type="tel" id="qcPhone" class="numeric-only" inputmode="numeric" placeholder=" "><label>Phone Number</label></div>
+                <div class="input-group full-width"><input type="text" id="qcMessage" placeholder=" "><label>What can we help with?</label></div>
+            </div>
+            <button type="button" id="qcSubmitBtn" class="btn-primary" style="margin-top:16px;">Send Message</button>
+            <div id="qcMsg" style="margin-top:10px; font-weight:bold; color:#C7002C; font-size:13px;"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .form-container { max-width: 1150px; margin: 0 auto; background: #fff; font-family: 'Segoe UI', Arial, sans-serif; color: #333; padding: 24px 28px 40px; border-radius: 0px; box-shadow: 0 8px 26px rgba(0,0,0,0.06); }
+
+    /* =========================================================
+       QUOTE CENTER HERO v4 — Editorial Studio Light
+       (Warm cream BG + Red offset image frame + Floating card)
+       ========================================================= */
+    .qc-header {
+        position: relative;
+        width: 100vw;
+        max-width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        margin-top: -24px;
+        margin-bottom: 40px;
+        padding: 0;
+        background: #F7F3EE;
+        isolation: isolate;
+        overflow: hidden;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #2F2D2A;
+    }
+
+    /* Prevent horizontal scrollbar caused by full-bleed hero */
+    html, body { overflow-x: hidden; }
+
+    /* Subtle dot pattern on left half */
+    .qc-header::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 50%;
+        height: 100%;
+        background-image: radial-gradient(circle, rgba(47,45,42,.06) 1px, transparent 1.6px);
+        background-size: 24px 24px;
+        z-index: 0;
+        pointer-events: none;
+        mask-image: linear-gradient(90deg, #000 0%, #000 55%, transparent 100%);
+        -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 55%, transparent 100%);
+    }
+
+    /* Big soft red glow top-right */
+    .qc-header::after {
+        content: "";
+        position: absolute;
+        top: -180px; right: -180px;
+        width: 480px; height: 480px;
+        background: radial-gradient(circle, rgba(199,0,44,.14) 0%, transparent 65%);
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    /* Content container */
+    .qc-header-inner {
+        position: relative;
+        z-index: 2;
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 90px 40px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(340px, .9fr);
+        gap: 80px;
+        align-items: center;
+        min-height: 620px;
+    }
+
+    .qc-header-left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Kicker — red short bar + text */
+    .qc-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        width: fit-content;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: .22em;
+        text-transform: uppercase;
+        color: #C7002C;
+        margin-bottom: 24px;
+    }
+    .qc-eyebrow::before {
+        content: "";
+        width: 26px;
+        height: 3px;
+        background: #C7002C;
+        border-radius: 3px;
+    }
+
+    /* H1 — dark charcoal + red italic accent */
+    .qc-header h1 {
+        margin: 0 0 24px;
+        font-size: clamp(38px, 5vw, 62px);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -.05em;
+        color: #2F2D2A;
+        max-width: 620px;
+    }
+    .qc-header h1 em {
+        font-style: italic;
+        color: #C7002C;
+        font-weight: 800;
+    }
+
+    /* Copy */
+    .qc-header-left p {
+        margin: 0 0 20px;
+        font-size: 17px;
+        line-height: 1.7;
+        color: #5a5854;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        max-width: 520px;
+    }
+
+    /* Bold line — white box + red left bar */
+    .qc-header-left p.qc-bold-line {
+        margin: 0 0 32px;
+        padding: 14px 20px;
+        background: #ffffff;
+        border-left: 3px solid #C7002C;
+        border-radius: 0 10px 10px 0;
+        box-shadow: 0 8px 22px rgba(47,45,42,.06);
+        font-family: 'Segoe UI', Arial, sans-serif;
+        font-size: 13.5px;
+        color: #2F2D2A;
+        font-weight: 600;
+        line-height: 1.55;
+        max-width: 520px;
+    }
+
+    /* Feature row — inline with circular icons */
+    .qc-feature-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px 26px;
+        align-items: center;
+        max-width: 540px;
+    }
+    .qc-feature {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: #2F2D2A;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: .005em;
+    }
+    .qc-feature-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #ffffff;
+        border: 1px solid #ece7de;
+        color: #C7002C;
+        flex-shrink: 0;
+        box-shadow: 0 4px 10px rgba(47,45,42,.05);
+        transition: .25s ease;
+    }
+    .qc-feature:hover .qc-feature-icon {
+        background: linear-gradient(135deg, #C7002C, #93001F);
+        border-color: #C7002C;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(199,0,44,.30);
+    }
+    .qc-feature-icon svg { width: 14px; height: 14px; display: block; }
+    .qc-feature-text { white-space: nowrap; }
+
+    /* ====== Right — Image frame with red offset ====== */
+    .qc-header-right {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .qc-image-frame {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+        padding: 0 22px 22px 0;
+    }
+
+    /* Red offset block behind image (bottom-right peek) */
+    .qc-image-frame::before {
+        content: "";
+        position: absolute;
+        top: 22px;
+        right: 0;
+        bottom: 0;
+        left: 22px;
+        background: linear-gradient(135deg, #C7002C 0%, #93001F 100%);
+        border-radius: 22px;
+        z-index: 1;
+    }
+
+    /* The image itself — NEW IMAGE */
+    .qc-image {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        border-radius: 22px;
+        background-image:
+            linear-gradient(135deg, rgba(199,0,44,.10) 0%, rgba(199,0,44,.05) 45%, rgba(47,45,42,.10) 100%),
+            url('https://sandovalinsuranceagency.com/wp-content/uploads/2026/09/WhatsApp-Image-2026-09-10-at-10.13.43-AM-1.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: 0 30px 65px rgba(47,45,42,.18);
+    }
+
+    /* "Start Here" white pill badge — top-left of image */
+    .qc-badge {
+        position: absolute;
+        z-index: 4;
+        top: 22px;
+        left: 22px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 14px 7px 12px;
+        background: rgba(255,255,255,.94);
+        border-radius: 999px;
+        font-size: 10.5px;
+        font-weight: 800;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        color: #C7002C;
+        box-shadow: 0 10px 25px rgba(0,0,0,.14);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    .qc-badge::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #C7002C;
+        animation: qcDotPulse 2s ease-out infinite;
+    }
+    @keyframes qcDotPulse {
+        0% { box-shadow: 0 0 0 3px rgba(199,0,44,.20), 0 0 0 0 rgba(199,0,44,.55); }
+        70% { box-shadow: 0 0 0 3px rgba(199,0,44,.20), 0 0 0 12px rgba(199,0,44,0); }
+        100% { box-shadow: 0 0 0 3px rgba(199,0,44,.20), 0 0 0 0 rgba(199,0,44,0); }
+    }
+
+    /* Floating white journey card — overlaps bottom-left of image */
+    .qc-float-card {
+        position: absolute;
+        z-index: 5;
+        left: -34px;
+        bottom: -8px;
+        width: 260px;
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 20px;
+        box-shadow: 0 28px 60px rgba(47,45,42,.22);
+        border: 1px solid #f0ece5;
+    }
+
+    .qc-float-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 12px;
+        margin-bottom: 14px;
+        border-bottom: 1px solid #f0ece5;
+    }
+    .qc-float-head span {
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: .16em;
+        text-transform: uppercase;
+        color: #7a7873;
+    }
+    .qc-float-head em {
+        font-style: normal;
+        font-size: 10px;
+        font-weight: 800;
+        color: #fff;
+        background: linear-gradient(135deg, #C7002C, #93001F);
+        padding: 4px 10px;
+        border-radius: 20px;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+    }
+
+    .qc-float-steps {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+    }
+    .qc-float-steps li {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: #8a8884;
+        padding: 3px 0;
+        transition: .2s ease;
+    }
+    .qc-float-steps li span {
+        flex-shrink: 0;
+        width: 26px;
+        height: 26px;
+        border-radius: 9px;
+        background: #f6f2ec;
+        color: #a5a29c;
+        font-size: 10px;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: .04em;
+        transition: .25s ease;
+    }
+    .qc-float-steps li.active {
+        color: #2F2D2A;
+    }
+    .qc-float-steps li.active span {
+        background: linear-gradient(135deg, #C7002C, #93001F);
+        color: #ffffff;
+        box-shadow: 0 6px 14px rgba(199,0,44,.35);
+    }
+
+    /* ====== Hero responsive ====== */
+    @media (max-width: 1000px) {
+        .qc-header-inner {
+            grid-template-columns: 1fr;
+            gap: 56px;
+            padding: 20px 30px 100px;
+        }
+        .qc-header-right { justify-content: center; }
+        .qc-image-frame { max-width: 380px; }
+        .qc-header h1 { font-size: 46px; }
+        .qc-header::before { width: 100%; }
+    }
+
+    @media (max-width: 700px) {
+        .qc-header { margin-top: -16px; margin-bottom: 28px; }
+        .qc-header-inner {
+            padding: 60px 22px 90px;
+            gap: 44px;
+        }
+        .qc-header h1 { font-size: 34px; }
+        .qc-header-left p { font-size: 15px; }
+        .qc-header-left p.qc-bold-line { font-size: 13px; padding: 12px 16px; }
+        .qc-feature-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+        .qc-image-frame {
+            max-width: 320px;
+            margin: 0 auto;
+            padding: 0 18px 18px 0;
+        }
+        .qc-image-frame::before {
+            top: 18px;
+            left: 18px;
+        }
+        .qc-float-card {
+            left: -12px;
+            right: -12px;
+            bottom: -20px;
+            width: auto;
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+        .qc-float-head span { font-size: 9.5px; }
+        .qc-float-steps li { font-size: 12px; }
+    }
+
+    /* ========== PROGRESS BAR ========== */
+    .progress-bar { display: flex; align-items: center; justify-content: center; margin-bottom: 34px; padding: 6px 10px 0; }
+    .progress-step { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 68px; }
+    .step-circle { width: 34px; height: 34px; border-radius: 50%; border: 2px solid #ddd; color: #aaa; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; background: #fff; transition: 0.25s; }
+    .step-text { margin-top: 6px; display: flex; flex-direction: column; }
+    .step-label { font-size: 11.5px; color: #999; font-weight: 600; }
+    .step-sub { font-size: 10px; color: #C7002C; font-weight: 600; }
+    .progress-line { flex: 1; max-width: 90px; height: 3px; background: #e5e5e5; margin: 0 4px 20px; border-radius: 2px; transition: background 0.3s ease; }
+    .progress-line.filled { background: linear-gradient(90deg, #C7002C, #93001F); }
+    .progress-step.active .step-circle { border-color: #C7002C; background: linear-gradient(135deg, #C7002C, #93001F); color: #fff; box-shadow: 0 4px 12px rgba(199,0,44,0.35); transform: scale(1.06); animation: pulseStep 1.8s ease-out infinite; }
+    .progress-step.active .step-label { color: #C7002C; }
+    @keyframes pulseStep { 0% { box-shadow: 0 4px 12px rgba(199,0,44,0.35), 0 0 0 0 rgba(199,0,44,0.45); } 70% { box-shadow: 0 4px 12px rgba(199,0,44,0.35), 0 0 0 9px rgba(199,0,44,0); } 100% { box-shadow: 0 4px 12px rgba(199,0,44,0.35), 0 0 0 0 rgba(199,0,44,0); } }
+    .progress-step.done .step-circle { border-color: #C7002C; background: #fff; color: #C7002C; }
+    .progress-step.done .step-label { color: #333; }
+    .step-circle svg { display: block; }
+
+    .page { animation: fadeIn 0.25s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes modalPop { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
+
+    h3 { font-size: 15px; color: #222; border-bottom: 2px solid #C7002C; padding-bottom: 6px; margin: 0 0 16px; }
+
+    .parent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 0 12px; }
+    .parent-card, .category-card { position: relative; border: 1px solid #e2e2e2; border-radius: 14px; padding: 18px 10px; text-align: center; cursor: pointer; transition: 0.18s; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.03); }
+    .parent-card { padding: 26px 14px; }
+    .parent-card:hover, .category-card:hover { border-color: #C7002C; background: #fff6f6; transform: translateY(-3px); box-shadow: 0 8px 18px rgba(199,0,44,0.14); }
+    .parent-card.active, .category-card.active { border-color: #C7002C; background: linear-gradient(135deg, #C7002C, #93001F); box-shadow: 0 8px 20px rgba(199,0,44,0.3); }
+    .check-badge { display: none; position: absolute; top: 8px; right: 8px; width: 18px; height: 18px; border-radius: 50%; background: #fff; color: #C7002C; font-size: 11px; font-weight: 900; align-items: center; justify-content: center; }
+    .category-card.active .check-badge, .parent-card.active .check-badge { display: flex; animation: popIn 0.2s ease; }
+    @keyframes popIn { from { transform: scale(0); } to { transform: scale(1); } }
+
+    #page-details, #page-review { max-width: 780px; margin: 0 auto; }
+    #quickContactPanel { max-width: 780px; margin: 0 auto; }
+    .quick-contact-panel { background: #fbfbfb; border: 1px solid #eee; border-radius: 14px; padding: 22px; animation: fadeIn 0.2s ease; }
+    .quick-contact-divider { display: flex; align-items: center; gap: 14px; margin: 28px auto 18px; max-width: 780px; color: #bbb; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+    .quick-contact-divider::before, .quick-contact-divider::after { content: ''; flex: 1; height: 1px; background: #eee; }
+    .quick-contact-sub { font-size: 12.5px; color: #888; margin: 0 0 14px; }
+
+    .selection-breadcrumb { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 13px; color: #888; margin-bottom: 20px; }
+    .selection-breadcrumb .crumb-current { color: #C7002C; font-weight: 700; }
+    .selection-breadcrumb .crumb-sep { color: #ccc; }
+    .selection-breadcrumb .crumb-change { margin-left: 6px; background: none !important; border: none !important; color: #C7002C !important; font-size: 12px; font-weight: 600; text-decoration: underline; cursor: pointer; padding: 0; }
+    .selection-breadcrumb .crumb-change:hover { color: #93001F !important; }
+
+    .mini-progress { display: flex; align-items: center; margin-bottom: 26px; gap: 2px; }
+    .mini-step { display: flex; align-items: center; flex: 1; }
+    .mini-step .mini-dot { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #f2f2f2; color: #bbb; border: 1.5px solid #e5e5e5; transition: 0.25s; flex-shrink: 0; }
+    .mini-step .mini-dot svg { width: 12px; height: 12px; }
+    .mini-step .mini-label { font-size: 11.5px; color: #aaa; margin-left: 7px; font-weight: 600; white-space: nowrap; }
+    .mini-step .mini-connector { flex: 1; height: 2px; background: #e5e5e5; margin: 0 8px; border-radius: 2px; }
+    .mini-step:last-child .mini-connector { display: none; }
+    .mini-step.done .mini-dot, .mini-step.active .mini-dot { background: #C7002C; border-color: #C7002C; color: #fff; }
+    .mini-step.done .mini-connector { background: #C7002C; }
+    .mini-step.done .mini-label { color: #333; }
+    .mini-step.active .mini-label { color: #C7002C; }
+    .mini-step.active .mini-dot { box-shadow: 0 0 0 4px rgba(199,0,44,0.15); animation: pulseDot 1.6s ease-out infinite; }
+    @keyframes pulseDot { 0% { box-shadow: 0 0 0 4px rgba(199,0,44,0.15), 0 0 0 0 rgba(199,0,44,0.45); } 70% { box-shadow: 0 0 0 4px rgba(199,0,44,0.15), 0 0 0 9px rgba(199,0,44,0); } 100% { box-shadow: 0 0 0 4px rgba(199,0,44,0.15), 0 0 0 0 rgba(199,0,44,0); } }
+
+    .icon-wrap { color: #C7002C; display: flex; justify-content: center; margin-bottom: 8px; transition: 0.18s; }
+    .icon-wrap svg { width: 30px; height: 30px; }
+    .parent-card.active .icon-wrap, .category-card.active .icon-wrap { color: #fff; }
+    .parent-card span, .category-card span { display: block; font-size: 13px; font-weight: 600; color: #333; }
+    .parent-card.active span, .category-card.active span { color: #fff; }
+    .category-card .icon-wrap svg { width: 24px; height: 24px; }
+    .category-card span { font-size: 12.5px; }
+    .category-card small { display: block; font-size: 10.5px; color: #888; margin-top: 4px; line-height: 1.3; font-weight: 400; }
+    .category-card.active small { color: rgba(255,255,255,0.85); }
+
+    .sub-grid-title { border: none; padding: 0; margin: 4px 0 14px; font-size: 14px; color: #666; }
+    .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; padding: 0 12px; }
+    .back-link { background: none !important; border: none !important; color: #C7002C !important; font-weight: 600; font-size: 13px; cursor: pointer; padding: 0 0 10px; }
+    .back-link:hover { color: #93001F !important; }
+    .general-link { display: block; text-align: center; margin-top: 22px; font-size: 12.5px; color: #999; text-decoration: none; }
+    .general-link:hover { color: #C7002C; }
+    .checkbox-inline { display: flex; gap: 8px; align-items: center; font-size: 13.5px; color: #555; font-weight: 600; background: #fff8f8; border: 1px dashed #e8b8c0; padding: 10px 14px; border-radius: 8px; cursor: pointer; margin-bottom: 6px; }
+    .checkbox-inline input { accent-color: #C7002C; width: 15px; height: 15px; flex-shrink: 0; }
+    .draft-banner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: #fff8ec; border: 1px solid #f0dfc0; color: #7a5c1e; padding: 14px 18px; border-radius: 12px; margin-bottom: 22px; font-size: 13.5px; font-weight: 600; animation: fadeIn 0.25s ease; }
+    .draft-banner-actions { display: flex; gap: 10px; }
+    .draft-banner .btn-primary, .draft-banner .btn-secondary { padding: 8px 16px; font-size: 13px; }
+
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .interest-grid { grid-template-columns: 1fr 1fr 1fr; gap: 10px 14px; }
+    .interest-grid label { font-size: 13px; color: #444; }
+    .full-width { grid-column: span 2; }
+    .input-group { display: flex; flex-direction: column; margin-top: 15px; position: relative; }
+    .input-group input, .input-group select { order: 0; width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; box-sizing: border-box; font-family: inherit; transition: 0.15s; }
+    .input-group input:focus, .input-group select:focus { outline: none; border-color: #C7002C; box-shadow: 0 0 0 3px rgba(199,0,44,0.12); }
+    .input-group > label { order: -1; position: static; background: none; padding: 0; pointer-events: none; font-size: 12px; font-weight: 700; color: #666; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.02em; }
+    .input-group input:focus ~ label, .input-group select:focus ~ label { color: #C7002C; }
+    .input-group small { order: 1; }
+    .input-group small.field-hint { font-size: 11px; color: #999; font-weight: 500; margin-top: 4px; }
+
+    .radio-row { display: flex; align-items: center; gap: 22px; margin-top: 2px; order: 0; }
+    .radio-option { display: flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600; color: #333; cursor: pointer; text-transform: none; letter-spacing: normal; pointer-events: auto; }
+    .radio-option input[type="radio"] { width: 18px; height: 18px; accent-color: #C7002C; cursor: pointer; margin: 0; }
+    .field-info { display: none; }
+    .input-group .check-icon { display:none; align-items:center; justify-content:center; position:absolute; right:11px; bottom:11px; width:16px; height:16px; background:transparent; pointer-events:none; }
+    .input-group .check-icon svg { width:16px; height:16px; display:block; }
+    .input-group.is-complete .check-icon { display:flex; }
+    .input-group.is-complete input:not([type="checkbox"]),
+    .input-group.is-complete select { padding-right:32px; }
+
+    .section { margin-bottom: 22px; }
+    .conditional { display: none; }
+
+    .section.section-card {
+        background: #fff;
+        border: 1px solid #ececec;
+        border-radius: 14px;
+        padding: 20px 22px 22px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+    .section.section-card h3.icon-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 16px;
+        margin-bottom: 20px;
+    }
+    .section-icon-circle {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1.5px solid #C7002C;
+        color: #C7002C;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        background: #fff5f5;
+    }
+    .section-icon-circle svg { width: 17px; height: 17px; }
+    .section-header-text { display: flex; flex-direction: column; }
+    .section-header-title { font-size: 15px; font-weight: 700; color: #C7002C; text-transform: none; letter-spacing: normal; }
+    .section-header-sub { font-size: 12px; font-weight: 400; color: #888; margin-top: 2px; }
+
+    .vehicle-entry {
+        background: #fafafa;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 16px 16px 6px;
+        margin-bottom: 14px;
+    }
+    .vehicle-entry:last-of-type { margin-bottom: 0; }
+    .vehicle-label {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+        color: #C7002C;
+        background: #fff0f1;
+        padding: 4px 12px;
+        border-radius: 20px;
+        margin-bottom: 4px;
+    }
+    .section-note {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        color: #999;
+        margin: 14px 2px 0;
+    }
+
+    .part-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 26px; gap: 12px; }
+    .form-container .btn-primary, .form-container .submit-btn { background: linear-gradient(135deg, #C7002C, #93001F) !important; color: #fff !important; border: none !important; padding: 13px 26px; border-radius: 25px; font-size: 14.5px; font-weight: 700; cursor: pointer; transition: 0.15s; }
+    .form-container .btn-primary:hover, .form-container .submit-btn:hover { background: linear-gradient(135deg, #C7002C, #93001F) !important; color: #fff !important; box-shadow: 0 6px 16px rgba(199,0,44,0.3); transform: translateY(-1px); }
+    .form-container .btn-secondary { background: #fff !important; color: #C7002C !important; border: 1.5px solid #C7002C !important; padding: 12px 22px; border-radius: 25px; font-size: 14px; font-weight: 600; cursor: pointer; transition: 0.15s; }
+    .form-container .btn-secondary:hover { background: #fff5f5 !important; color: #C7002C !important; border-color: #C7002C !important; }
+    .form-container .submit-btn { width: auto; margin-top: 0; }
+    .form-container .add-btn { background: #f9f9f9 !important; border: 1px dashed #C7002C !important; padding: 9px; border-radius: 8px; cursor: pointer; width: 100%; font-size: 13px; color: #C7002C !important; font-weight: 600; margin-top: 8px; }
+    .form-container .add-btn:hover { background: #fff5f5 !important; color: #C7002C !important; }
+
+    .review-title { border: none; padding: 0; font-size: 19px; }
+    .review-fields table { width: 100%; border-collapse: collapse; }
+
+    @media (max-width: 700px) {
+        .form-container { padding: 16px 5px 30px; }
+        /* ---- FIX: keep 3 parent cards in a row on mobile ---- */
+        .parent-grid { grid-template-columns: repeat(3, 1fr); padding: 0; gap: 8px; }
+        .parent-card { padding: 14px 6px; border-radius: 12px; }
+        .parent-card .icon-wrap { margin-bottom: 6px; }
+        .parent-card .icon-wrap svg { width: 22px; height: 22px; }
+        .parent-card span { font-size: 11.5px; line-height: 1.2; }
+        /* ------------------------------------------------------ */
+        .category-grid { grid-template-columns: repeat(2, 1fr); padding: 0; }
+        .grid, .interest-grid { grid-template-columns: 1fr; }
+        .full-width { grid-column: span 1; }
+        .step-label { font-size: 10px; }
+        .progress-line { max-width: 26px; }
+        .mini-step .mini-label { display: none; }
+        .mini-step .mini-dot { margin: 0 auto; }
+        .section.section-card { padding: 14px 10px 16px; }
+        #page-details, #page-review, #quickContactPanel { padding: 0; }
+    }
+</style>
+
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        emailjs.init({ publicKey: "T_QKkrt7vDYbx-HY-" });
+    })();
+</script>
+
+<script>
+// ---------- Thank You Modal ----------
+const modalHtml = `
+<div id="thankyouModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 36px 40px 32px; border-radius: 18px; text-align: center; max-width: 400px; margin: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.25); animation: modalPop 0.3s ease;">
+        <div style="width:72px; height:72px; margin:0 auto 18px; border-radius:50%; background:linear-gradient(135deg, #C7002C, #93001F); display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(199,0,44,0.35); animation: popIn 0.4s ease 0.1s both;">
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 style="color: #C7002C; margin-bottom: 10px; border: none; padding: 0; font-size: 20px;">Thank You!</h3>
+        <p style="font-size: 15px; color: #555; margin-bottom: 24px; line-height: 1.5;">Your quote request has been submitted successfully. We will contact you shortly.</p>
+        <button onclick="closeThankyouModal()" style="background: linear-gradient(135deg, #C7002C, #93001F); color: white; border: none; padding: 11px 30px; border-radius: 25px; cursor: pointer; font-size: 14px; font-weight: 700; box-shadow:0 6px 16px rgba(199,0,44,0.3);">Close</button>
+    </div>
+</div>
+`;
+document.body.insertAdjacentHTML('beforeend', modalHtml);
+function showThankyouModal() { document.getElementById('thankyouModal').style.display = 'flex'; }
+function closeThankyouModal() { document.getElementById('thankyouModal').style.display = 'none'; }
+
+// ---------- Numbers-only fields ----------
+document.addEventListener('input', function (e) {
+    const t = e.target;
+    if (t && t.classList && t.classList.contains('numeric-only')) {
+        const cleaned = t.value.replace(/[^0-9]/g, '');
+        if (cleaned !== t.value) t.value = cleaned;
+    }
+});
+
+// Plain checkmark icon
+const CHECK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="#1DA463" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+
+// ---------- Icons ----------
+const ICON = {
+    home: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>',
+    home_auto: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9.5l6-5 6 5"/><path d="M4 9v6h9V9"/><path d="M13.5 15h3"/><rect x="14" y="14.3" width="7.5" height="4" rx="1.2"/><circle cx="16" cy="19.3" r="1.1"/><circle cx="19.5" cy="19.3" r="1.1"/></svg>',
+    auto: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><rect x="2" y="13" width="20" height="5" rx="1.5"/><circle cx="7" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg>',
+    motorcycle: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="17" r="2.5"/><circle cx="18.5" cy="17" r="2.5"/><path d="M8 17h5l2-5h3"/><path d="M11 12l-2-3H6"/><path d="M13 12l3 5"/></svg>',
+    rv: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="14" height="9" rx="1"/><path d="M16 10h3l3 3v3h-6z"/><circle cx="6" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/><path d="M5 10h4v4H5z"/></svg>',
+    renters: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="4"/><path d="M11 11l9 9"/><path d="M16 16l2-2"/><path d="M19 19l2-2"/></svg>',
+    condo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"/></svg>',
+    boat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15h18l-2 4a2 2 0 0 1-1.8 1H6.8A2 2 0 0 1 5 19z"/><path d="M6 15V6l6 3 3-3"/></svg>',
+    classic_car: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14l2-5a2 2 0 0 1 1.9-1.4h9.4A2 2 0 0 1 17 9l1.5 5"/><path d="M2 14h20v3.5H2z"/><circle cx="7" cy="17.5" r="1.7"/><circle cx="17" cy="17.5" r="1.7"/><circle cx="5.5" cy="10.5" r=".8"/></svg>',
+    umbrella: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 0 1 9 8H3a9 9 0 0 1 9-8z"/><path d="M12 11v8a2 2 0 0 1-2 2"/><path d="M12 3v1"/></svg>',
+    business: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="1.5"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>',
+    commercial_auto: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="9" width="12" height="7" rx="1"/><path d="M13 11h4l4 3v2h-8z"/><circle cx="5" cy="18" r="1.6"/><circle cx="16.5" cy="18" r="1.6"/></svg>',
+    comm_liability: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M7 21h10"/><path d="M4 7h6M14 7h6"/><path d="M4 7l-2 5a3 3 0 0 0 6 0z"/><path d="M20 7l-2 5a3 3 0 0 0 6 0z"/></svg>',
+    workers_comp: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20"/><path d="M12 7v3"/></svg>',
+    bonds: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v13a3 3 0 0 1-3 3H6z"/><path d="M6 20a3 3 0 0 1-3-3V6"/><path d="M9 8h6M9 12h6"/></svg>',
+    farm: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="3"/><circle cx="18" cy="17" r="2.2"/><path d="M6 15V9h4l3 3h2.5"/><path d="M9 15h6"/><path d="M15 12v-3h2"/></svg>',
+    landlord: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h5v-5h2v5h5a1 1 0 0 0 1-1v-9"/><circle cx="15" cy="15.3" r="1.1"/></svg>',
+    flood: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15c1.5-2 3.5-2 5 0s3.5 2 5 0 3.5-2 5 0 3.5 2 5 0"/><path d="M2 19c1.5-2 3.5-2 5 0s3.5 2 5 0 3.5-2 5 0 3.5 2 5 0"/></svg>',
+    earthquake: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19l6-10 4 6 2-3 6 7z"/><path d="M2 19h20"/></svg>',
+    off_road: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h13l-3 4 3 4H5"/></svg>',
+    general: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1.3 1-1.3 1.9"/><path d="M12 17h.01"/></svg>',
+    parent_personal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>',
+    parent_business: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="1.5"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>',
+    parent_specialty: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19l6-10 4 6 2-3 6 7z"/><path d="M2 19h20"/></svg>'
+};
+
+const CATEGORY_LABELS = {
+    home_auto: 'Home + Auto', home: 'Home', auto: 'Auto', business: 'General Business Coverage',
+    farm: 'Farm', rv: 'RV', commercial_auto: 'Commercial Auto', motorcycle: 'Motorcycle',
+    renters: 'Renters', boat: 'Boat', condo: 'Condo', landlord: 'Landlord', flood: 'Flood',
+    classic_car: 'Classic Car', umbrella: 'Umbrella', earthquake: 'Earthquake',
+    off_road: 'Off-Road', comm_liability: 'General Liability', workers_comp: "Workers' Compensation",
+    bonds: 'Bonds', general: 'General Inquiry'
+};
+
+const CATEGORY_DESC = {
+    home: 'Coverage for your house and belongings', home_auto: 'Bundle your home and vehicle coverage',
+    auto: 'Coverage for your everyday vehicle', motorcycle: 'Coverage built for bikes and riders',
+    rv: 'Protection for your RV or motorhome', renters: 'Coverage for what you own, not the building',
+    condo: 'Coverage for condo owners', boat: 'Protection for boats and watercraft',
+    classic_car: 'Specialty coverage for collector vehicles', umbrella: 'Extra liability protection above your other policies',
+    business: 'General coverage for your business property and operations', commercial_auto: 'Vehicles used for business purposes',
+    comm_liability: 'Protection from common business liability claims', workers_comp: 'Coverage for employee injuries on the job',
+    bonds: 'Surety and license bonds for your business', farm: 'Coverage for farm property, equipment and operations',
+    landlord: 'Coverage for property you rent out to others', flood: 'Protection against flood damage',
+    earthquake: 'Protection against earthquake damage', off_road: 'Coverage for ATVs, UTVs and off-road vehicles'
+};
+
+const PARENTS = {
+    personal: { label: 'Personal', question: 'What are we covering today?', icon: ICON.parent_personal, subs: ['home', 'home_auto', 'auto', 'motorcycle', 'rv', 'renters', 'condo', 'boat', 'classic_car'] },
+    business: { label: 'Business', question: 'What type of business coverage do you need?', icon: ICON.parent_business, subs: ['business', 'commercial_auto', 'comm_liability', 'workers_comp', 'bonds'] },
+    specialty: { label: 'Specialty', question: 'Which specialty coverage do you need?', icon: ICON.parent_specialty, subs: ['farm', 'landlord', 'flood', 'earthquake', 'off_road', 'umbrella'] }
+};
+
+// ---------- Build parent grid ----------
+const parentGrid = document.getElementById('parentGrid');
+Object.keys(PARENTS).forEach(key => {
+    const p = PARENTS[key];
+    const card = document.createElement('div');
+    card.className = 'parent-card';
+    card.dataset.parent = key;
+    card.innerHTML = `<div class="icon-wrap">${p.icon}</div><span>${p.label}</span>`;
+    card.addEventListener('click', () => openSubGrid(key));
+    parentGrid.appendChild(card);
+});
+
+const subGrid = document.getElementById('subGrid');
+const subCards = document.getElementById('subCards');
+const subGridTitle = document.getElementById('subGridTitle');
+
+function openSubGrid(parentKey) {
+    document.querySelectorAll('.parent-card').forEach(c => c.classList.toggle('active', c.dataset.parent === parentKey));
+    const p = PARENTS[parentKey];
+    subGridTitle.textContent = p.question;
+    subCards.innerHTML = '';
+    p.subs.forEach(val => {
+        const card = document.createElement('div');
+        card.className = 'category-card';
+        card.dataset.value = val;
+        card.innerHTML = `<div class="check-badge">&#10003;</div><div class="icon-wrap">${ICON[val]}</div><span>${CATEGORY_LABELS[val]}</span><small>${CATEGORY_DESC[val] || ''}</small>`;
+        card.addEventListener('click', () => selectCategory(val));
+        subCards.appendChild(card);
+    });
+    parentGrid.style.display = 'none';
+    subGrid.style.display = 'block';
+}
+
+document.getElementById('backToParent').addEventListener('click', () => {
+    parentGrid.style.display = 'grid';
+    subGrid.style.display = 'none';
+    document.querySelectorAll('.parent-card').forEach(c => c.classList.remove('active'));
+});
+
+const quickContactPanel = document.getElementById('quickContactPanel');
+document.getElementById('qcSubmitBtn').addEventListener('click', async () => {
+    const qcName = document.getElementById('qcName');
+    const qcEmail = document.getElementById('qcEmail');
+    const qcPhone = document.getElementById('qcPhone');
+    const qcMessage = document.getElementById('qcMessage');
+    const qcMsg = document.getElementById('qcMsg');
+    const qcBtn = document.getElementById('qcSubmitBtn');
+
+    if (!qcName.value.trim() || !qcEmail.value.trim() || !qcPhone.value.trim() || !qcMessage.value.trim()) {
+        qcMsg.textContent = 'Please fill in all fields so we know how to help.';
+        return;
+    }
+    if (!qcEmail.checkValidity()) {
+        qcMsg.textContent = 'Please enter a valid email address.';
+        return;
+    }
+    qcMsg.textContent = '';
+
+    const originalText = qcBtn.textContent;
+    qcBtn.textContent = 'Sending...';
+    qcBtn.disabled = true;
+
+    const rows = `<tr style="background:#ffffff;"><td style="padding:8px 10px; font-size:12px; color:#888; width:40%; border-bottom:1px solid #eee;">Message</td><td style="padding:8px 10px; font-size:13px; color:#222; border-bottom:1px solid #eee;">${escapeHtml(qcMessage.value.trim())}</td></tr>`;
+    const fieldsHtml = `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">${rows}</table>`;
+
+    const templateParams = {
+        insurance_category: 'Quick Contact / General Inquiry',
+        from_name: qcName.value.trim() + ' - Website Quick Contact',
+        first_name: qcName.value.trim(),
+        phone: qcPhone.value.trim(),
+        email: qcEmail.value.trim(),
+        time: new Date().toLocaleString('en-US', { timeZone: 'America/Chicago', dateStyle: 'medium', timeStyle: 'short' }),
+        fields_html: fieldsHtml
+    };
+
+    try {
+        await emailjs.send('service_7ppceyp', 'template_hhvep0t', templateParams);
+        showThankyouModal();
+        qcName.value = ''; qcEmail.value = ''; qcPhone.value = ''; qcMessage.value = '';
+    } catch (error) {
+        console.error('EmailJS error:', error);
+        qcMsg.textContent = 'Something went wrong sending your message. Please try again or call us directly.';
+    } finally {
+        qcBtn.textContent = originalText;
+        qcBtn.disabled = false;
+    }
+});
+
+// ---------- Category selection -> toggle conditional sections ----------
+const mainCategoryInput = document.getElementById('mainCategory');
+const vehicleWrapper = document.getElementById('vehicleWrapper');
+let vehicleCount = 0;
+
+function getParentKey(val) {
+    for (const k in PARENTS) { if (PARENTS[k].subs.includes(val)) return k; }
+    return null;
+}
+
+function renderBreadcrumb(val, targetEl) {
+    const parentKey = getParentKey(val);
+    const parentLabel = parentKey ? PARENTS[parentKey].label : '';
+    targetEl.innerHTML = (parentLabel ? `<span class="crumb-parent">${parentLabel}</span><span class="crumb-sep">&rsaquo;</span>` : '') +
+        `<span class="crumb-current">${CATEGORY_LABELS[val] || val}</span>` +
+        `<button type="button" class="crumb-change" id="crumbChange-${targetEl.id}">Change</button>`;
+    document.getElementById('crumbChange-' + targetEl.id).addEventListener('click', () => {
+        showPage('coverage');
+        if (parentKey) openSubGrid(parentKey);
+    });
+}
+
+function selectCategory(val) {
+    mainCategoryInput.value = val;
+
+    const contactHeader = document.getElementById('contactHeader');
+    const contactSubtitle = document.getElementById('contactSubtitle');
+    if (['auto', 'rv', 'motorcycle', 'classic_car'].includes(val)) {
+        contactHeader.innerText = 'Driver Information';
+        contactSubtitle.style.display = 'none';
+    } else if (BUSINESS_CATEGORIES.includes(val)) {
+        contactHeader.innerText = 'Primary Contact Information';
+        contactSubtitle.style.display = 'block';
+    } else if (['home', 'farm', 'landlord'].includes(val)) {
+        contactHeader.innerText = 'Primary Contact Information';
+        contactSubtitle.style.display = 'none';
+    } else {
+        contactHeader.innerText = 'Contact Information';
+        contactSubtitle.style.display = 'none';
+    }
+
+    vehicleWrapper.innerHTML = '';
+    vehicleCount = 0;
+
+    const sameAsBiz = document.getElementById('sameAsBusinessCheck');
+    if (sameAsBiz && sameAsBiz.checked) {
+        sameAsBiz.checked = false;
+        [document.getElementById('homeAddressField'), document.getElementById('phoneField'), document.getElementById('emailField')].forEach(el => el.readOnly = false);
+    }
+    const industryOtherDiv = document.getElementById('industryOtherDiv');
+    if (industryOtherDiv) industryOtherDiv.style.display = 'none';
+
+    document.querySelectorAll('.conditional, .base-section').forEach(el => {
+        const groups = el.getAttribute('data-groups') ? el.getAttribute('data-groups').split(',') : [];
+        const isBase = el.classList.contains('base-section');
+        if (isBase || groups.includes(val)) {
+            el.style.display = 'block';
+            el.querySelectorAll('input, select, textarea').forEach(i => i.disabled = false);
+            if (el.contains(vehicleWrapper) && vehicleCount === 0) { vehicleCount = 1; createVehicleFields(1); }
+        } else {
+            el.style.display = 'none';
+            el.querySelectorAll('input, select, textarea').forEach(i => i.disabled = true);
+        }
+    });
+
+    const isBizCategory = BUSINESS_CATEGORIES.includes(val);
+    ['homeAddressField', 'cityField', 'zipCode'].forEach(id => {
+        const fld = document.getElementById(id);
+        const grp = fld.closest('.input-group');
+        if (isBizCategory) {
+            grp.style.display = 'none';
+            fld.disabled = true;
+            fld.required = false;
+        } else {
+            grp.style.display = '';
+            fld.disabled = false;
+            fld.required = true;
+        }
+    });
+    const stateFld = document.querySelector('.base-section input[name="State"]');
+    if (stateFld) stateFld.closest('.input-group').style.display = isBizCategory ? 'none' : '';
+
+    const vehicleTitle = document.getElementById('vehicleSectionTitle');
+    const addVehicleBtnEl = document.getElementById('addVehicleBtn');
+    if (val === 'farm') {
+        vehicleTitle.textContent = 'Farm Vehicles & Equipment';
+        addVehicleBtnEl.textContent = '+ Add Another Vehicle / Equipment';
+    } else {
+        vehicleTitle.textContent = 'Vehicle';
+        addVehicleBtnEl.textContent = '+ Another vehicle';
+    }
+
+    goToDetails();
+    updateFieldCheckmarks();
+}
+
+function createVehicleFields(index) {
+    const div = document.createElement('div');
+    div.className = 'vehicle-entry';
+    const isFarm = mainCategoryInput.value === 'farm';
+    if (isFarm) {
+        div.innerHTML = `
+            <span class="vehicle-label">Item ${index}</span>
+            <div class="grid">
+                <div class="input-group full-width">
+                    <select name="V${index}_ItemType" required>
+                        <option value="" selected disabled>Select...</option>
+                        <option value="Vehicle">Vehicle</option>
+                        <option value="Tractor">Tractor</option>
+                        <option value="Trailer">Trailer</option>
+                        <option value="Farm Equipment">Farm Equipment</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <label> Equipment type</label>
+                </div>
+                <div class="input-group"><input type="text" name="V${index}_Year" class="numeric-only" inputmode="numeric" maxlength="4" required><label>Year</label></div>
+                <div class="input-group"><input type="text" name="V${index}_Make" required><label>Make</label></div>
+                <div class="input-group"><input type="text" name="V${index}_Model" required><label>Model</label></div>
+                <div class="input-group"><input type="text" name="V${index}_Value" class="numeric-only" inputmode="numeric"><label>Estimated Value  </label></div>
+                <div class="input-group"><input type="text" name="V${index}_VIN"><label>VIN/Serial Number  </label></div>
+            </div>`;
+    } else {
+        div.innerHTML = `
+            <span class="vehicle-label">Vehicle ${index}</span>
+            <div class="grid">
+                <div class="input-group"><input type="text" name="V${index}_Year" class="numeric-only" inputmode="numeric" maxlength="4" required><label>Year</label></div>
+                <div class="input-group"><input type="text" name="V${index}_Make" required><label>Make</label></div>
+                <div class="input-group"><input type="text" name="V${index}_Model" required><label>Model</label></div>
+                <div class="input-group"><input type="text" name="V${index}_Value"><label>Value/VIN  </label></div>
+            </div>`;
+    }
+    vehicleWrapper.appendChild(div);
+}
+document.getElementById('addVehicleBtn').addEventListener('click', () => {
+    if (vehicleCount < 8) { vehicleCount++; createVehicleFields(vehicleCount); }
+});
+
+function toggleElectrical(radioEl) {
+    const div = document.getElementById('electricalYearDiv');
+    const show = radioEl.value === 'Yes';
+    div.style.display = show ? 'block' : 'none';
+    div.querySelector('input').disabled = !show;
+}
+function toggleClaims(sel) {
+    const div = document.getElementById('claimsDescDiv');
+    div.style.display = (sel.value !== '0' && sel.value !== '') ? 'block' : 'none';
+    div.querySelector('input').disabled = (sel.value === '0' || sel.value === '');
+}
+function toggleCurrentCarrier(sel) {
+    const div = document.getElementById('currentCarrierDiv');
+    div.style.display = (sel.value === 'Yes') ? 'block' : 'none';
+    div.querySelector('input').disabled = (sel.value !== 'Yes');
+}
+function toggleIndustryOther(sel) {
+    const div = document.getElementById('industryOtherDiv');
+    div.style.display = (sel.value === 'Other') ? 'block' : 'none';
+}
+function toggleSameAsBusiness(box) {
+    const home = document.getElementById('homeAddressField');
+    const phone = document.getElementById('phoneField');
+    const email = document.getElementById('emailField');
+    const bizAddress = document.querySelector('input[name="Business_Address"]');
+    const bizPhone = document.querySelector('input[name="Business_Phone"]');
+    const bizEmail = document.querySelector('input[name="Business_Email"]');
+    if (box.checked) {
+        home.value = bizAddress.value; phone.value = bizPhone.value; email.value = bizEmail.value;
+        [home, phone, email].forEach(el => el.readOnly = true);
+    } else {
+        [home, phone, email].forEach(el => el.readOnly = false);
+    }
+}
+
+// ---------- ZIP / City autofill ----------
+const submitBtn = document.getElementById('submitBtn');
+
+function setupZipAutofill(zipId, cityId, errorId, stateHint) {
+    const zipEl = document.getElementById(zipId);
+    const cityEl = document.getElementById(cityId);
+    const errorEl = document.getElementById(errorId);
+    const state = { expectedCity: null, expectedCityDisplay: '' };
+
+    zipEl.addEventListener('input', async function () {
+        const val = this.value;
+        if (val.length === 5) {
+            const isOK = (val.startsWith('73') || val.startsWith('74'));
+            if (isOK) {
+                errorEl.style.display = 'none';
+                submitBtn.disabled = false;
+                try {
+                    const response = await fetch(`https://api.zippopotam.us/us/${val}`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        const fetchedCity = data.places[0]['place name'];
+                        cityEl.value = fetchedCity;
+                        state.expectedCity = fetchedCity.toLowerCase();
+                        state.expectedCityDisplay = fetchedCity;
+                    } else {
+                        state.expectedCity = null;
+                        cityEl.value = '';
+                        errorEl.textContent = "Error: This ZIP code doesn't exist. Enter a valid Oklahoma ZIP.";
+                        errorEl.style.display = 'block';
+                        submitBtn.disabled = true;
+                    }
+                } catch (err) {
+                    state.expectedCity = null;
+                }
+            } else {
+                errorEl.textContent = `Error: Oklahoma ZIP only (73xxx/74xxx).`;
+                errorEl.style.display = 'block';
+                submitBtn.disabled = true;
+                cityEl.value = '';
+                state.expectedCity = null;
+            }
+        } else {
+            state.expectedCity = null;
+        }
+    });
+    return state;
+}
+
+const ownerZipState = setupZipAutofill('zipCode', 'cityField', 'zipError');
+const businessZipState = setupZipAutofill('businessZipCode', 'businessCityField', 'businessZipError');
+
+// ---------- Completion checkmarks ----------
+function updateFieldCheckmarks() {
+    document.querySelectorAll('#quoteForm .input-group').forEach(grp => {
+        if (grp.querySelector('input[type="radio"]')) { grp.classList.remove('is-complete'); return; }
+        const field = grp.querySelector('input:not([type="checkbox"]):not([type="hidden"]), select, textarea');
+        if (!field) { grp.classList.remove('is-complete'); return; }
+        if (!grp.querySelector('.check-icon')) {
+            const icon = document.createElement('span');
+            icon.className = 'check-icon';
+            icon.innerHTML = CHECK_SVG;
+            grp.appendChild(icon);
+        }
+        if (field.disabled) { grp.classList.remove('is-complete'); return; }
+        const filled = (field.value || '').toString().trim() !== '';
+        grp.classList.toggle('is-complete', filled && field.checkValidity());
+    });
+}
+
+// ---------- Multi-step navigation ----------
+const pageOrder = ['coverage', 'details', 'review'];
+let currentPage = 'coverage';
+let activeParts = [1, 2, 3];
+let currentPartIndex = 0;
+
+function updateProgressBar() {
+    const stepMap = { coverage: 1, details: 2, review: 3 };
+    const active = stepMap[currentPage] || 1;
+    document.querySelectorAll('.progress-step').forEach(el => {
+        const s = parseInt(el.dataset.step, 10);
+        el.classList.remove('active', 'done');
+        if (s < active) el.classList.add('done');
+        if (s === active) el.classList.add('active');
+    });
+    const sub = document.getElementById('detailsSubLabel');
+    if (currentPage === 'details' && activeParts.length > 1) {
+        sub.textContent = 'Part ' + (currentPartIndex + 1) + ' of ' + activeParts.length;
+    } else {
+        sub.textContent = '';
+    }
+
+    document.querySelectorAll('#progressBar .progress-line').forEach((line, i) => {
+        const nextStep = i + 2;
+        line.classList.toggle('filled', nextStep <= active);
+    });
+}
+
+function computeActiveParts() {
+    const parts = [1, 2, 3];
+    activeParts = parts.filter(p => {
+        const el = document.querySelector('.detail-part[data-part="' + p + '"]');
+        return el.querySelectorAll('input:not([type="hidden"]):not([disabled]), select:not([disabled]), textarea:not([disabled])').length > 0;
+    });
+    if (activeParts.length === 0) activeParts = [1];
+}
+
+const BUSINESS_CATEGORIES = ['business', 'commercial_auto', 'comm_liability', 'workers_comp', 'bonds', 'umbrella'];
+function getPartLabel(partNum) {
+    if (partNum === 1) return BUSINESS_CATEGORIES.includes(mainCategoryInput.value) ? 'Business & Contact' : 'Personal Information';
+    if (partNum === 2) {
+        const cat = mainCategoryInput.value;
+        if (cat === 'home_auto') return 'Home & Auto';
+        if (cat === 'umbrella') return 'Coverage Preferences';
+        const propertyGroups = ['home', 'business', 'farm', 'renters', 'condo', 'landlord', 'earthquake'];
+        const vehicleGroups = ['auto', 'motorcycle', 'rv', 'commercial_auto', 'business', 'farm', 'boat', 'classic_car', 'off_road'];
+        const hasProperty = propertyGroups.includes(cat);
+        const hasVehicle = vehicleGroups.includes(cat);
+        if (hasProperty && hasVehicle) return 'Property & Vehicle';
+        if (hasVehicle) return 'Vehicle';
+        if (hasProperty) return 'Property Details';
+        return 'Details';
+    }
+    return 'Coverage Details';
+}
+
+const MINI_ICON = {
+    1: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>',
+    2: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><rect x="2" y="13" width="20" height="5" rx="1.5"/><circle cx="7" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg>',
+    3: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg>'
+};
+function renderMiniProgress(index) {
+    const wrap = document.getElementById('miniProgress');
+    wrap.innerHTML = '';
+    activeParts.forEach((partNum, i) => {
+        const step = document.createElement('div');
+        step.className = 'mini-step' + (i < index ? ' done' : '') + (i === index ? ' active' : '');
+        step.innerHTML = `<div class="mini-dot">${MINI_ICON[partNum] || MINI_ICON[1]}</div><span class="mini-label">${getPartLabel(partNum)}</span><div class="mini-connector"></div>`;
+        wrap.appendChild(step);
+    });
+}
+
+function scrollToFormTop() {
+    const headerEl = document.querySelector('.qc-header') || document.querySelector('.form-container');
+    if (headerEl) {
+        headerEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+function showPage(page) {
+    currentPage = page;
+    pageOrder.forEach(p => { document.getElementById('page-' + p).style.display = (p === page) ? 'block' : 'none'; });
+    document.getElementById('quickContactWrap').style.display = (page === 'coverage') ? 'block' : 'none';
+    updateProgressBar();
+    saveDraft();
+    scrollToFormTop();
+}
+
+function showDetailPart(index) {
+    currentPartIndex = index;
+    const partNum = activeParts[index];
+    document.querySelectorAll('.detail-part').forEach(el => {
+        el.style.display = (parseInt(el.dataset.part, 10) === partNum) ? 'block' : 'none';
+    });
+    document.getElementById('partBackBtn').textContent = (index === 0) ? '← Back to categories' : '← Back';
+    const isLast = index === activeParts.length - 1;
+    document.getElementById('partContinueBtn').textContent = isLast ? 'Review my request →' : ('Continue to ' + getPartLabel(activeParts[index + 1]) + ' →');
+    renderMiniProgress(index);
+    updateProgressBar();
+    saveDraft();
+    scrollToFormTop();
+}
+
+function goToDetails() {
+    computeActiveParts();
+    renderBreadcrumb(mainCategoryInput.value, document.getElementById('detailsBreadcrumb'));
+    showPage('details');
+    showDetailPart(0);
+}
+
+function validateCurrentPart() {
+    const partNum = activeParts[currentPartIndex];
+    const el = document.querySelector('.detail-part[data-part="' + partNum + '"]');
+    const fields = el.querySelectorAll('input:not([disabled]), select:not([disabled]), textarea:not([disabled])');
+    for (const f of fields) {
+        if (!f.checkValidity()) { f.reportValidity(); return false; }
+    }
+    if (partNum === 1) {
+        const zipErr = document.getElementById('zipError');
+        const bizZipErr = document.getElementById('businessZipError');
+        if (zipErr.style.display === 'block' && !document.getElementById('zipCode').disabled) { document.getElementById('zipCode').focus(); return false; }
+        if (bizZipErr && bizZipErr.style.display === 'block' && !document.getElementById('businessZipCode').disabled) {
+            document.getElementById('businessZipCode').focus(); return false;
+        }
+    }
+    return true;
+}
+
+document.getElementById('partContinueBtn').addEventListener('click', () => {
+    if (!validateCurrentPart()) return;
+    if (currentPartIndex < activeParts.length - 1) {
+        showDetailPart(currentPartIndex + 1);
+    } else {
+        buildReview();
+        showPage('review');
+    }
+});
+
+document.getElementById('partBackBtn').addEventListener('click', () => {
+    if (currentPartIndex === 0) {
+        showPage('coverage');
+    } else {
+        showDetailPart(currentPartIndex - 1);
+    }
+});
+
+document.getElementById('editAnswersBtn').addEventListener('click', () => {
+    showPage('details');
+    showDetailPart(0);
+});
+
+// ---------- Review page ----------
+function escapeHtml(str) {
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+function formatLabel(name) {
+    return name.replace(/\[\]$/, '').replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
+const EMAIL_ICON = {
+    person: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C7002C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>',
+    business: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C7002C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="1.5"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg>',
+    id: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C7002C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="12" r="2"/><path d="M14 10h4M14 14h4M6 16c.5-1.5 2-2 3-2s2.5.5 3 2"/></svg>',
+    pin: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C7002C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></svg>',
+    home: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C7002C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>',
+    car: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C7002C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13"/><rect x="2" y="13" width="20" height="5" rx="1.5"/><circle cx="7" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/></svg>',
+    note: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#C7002C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v2h6V3"/><path d="M8 11h8M8 15h5"/></svg>'
+};
+
+function buildEmailSection(title, iconKey, fields) {
+    const filled = fields.filter(f => f.value);
+    if (!filled.length) return '';
+    let bodyRows = '';
+    for (let i = 0; i < filled.length; i += 2) {
+        const a = filled[i], b = filled[i + 1];
+        const isFirstRow = i === 0;
+        const rowBg = (i / 2) % 2 === 0 ? '#ffffff' : '#f7f7f8';
+        const topBorder = isFirstRow ? 'border-top:1px solid #ececec;' : '';
+
+        bodyRows += '<tr>' +
+            '<td bgcolor="' + rowBg + '" style="' + topBorder + 'padding:10px 14px; width:' + (b ? '50%' : '100%') +
+                '; border-bottom:1px solid #ececec;' + (b ? ' border-right:1px solid #ececec;' : '') +
+                ' background:' + rowBg + ';">' +
+                '<div style="font-size:10.5px; font-weight:bold; color:#999; text-transform:uppercase; letter-spacing:.02em; margin-bottom:3px;">' + escapeHtml(a.label) + '</div>' +
+                '<div style="font-size:13.5px; color:#222;">' + escapeHtml(a.value) + '</div>' +
+            '</td>';
+
+        if (b) {
+            bodyRows += '<td bgcolor="' + rowBg + '" style="' + topBorder + 'padding:10px 14px; width:50%; border-bottom:1px solid #ececec; background:' + rowBg + ';">' +
+                '<div style="font-size:10.5px; font-weight:bold; color:#999; text-transform:uppercase; letter-spacing:.02em; margin-bottom:3px;">' + escapeHtml(b.label) + '</div>' +
+                '<div style="font-size:13.5px; color:#222;">' + escapeHtml(b.value) + '</div>' +
+            '</td>';
+        }
+        bodyRows += '</tr>';
+    }
+    return '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="border:1px solid #e3d9da; border-collapse:collapse; border-radius:12px; margin-bottom:18px; background:#ffffff; box-shadow:0 2px 8px rgba(0,0,0,0.06);">' +
+        '<tr><td bgcolor="#ffffff" style="padding:16px 16px 8px 16px; background:#ffffff;">' +
+            '<table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse:collapse;"><tr>' +
+                '<td bgcolor="#fbe4e6" style="width:28px; height:28px; background:#fbe4e6; border-radius:50%; text-align:center; vertical-align:middle; font-size:13px; line-height:2px;">' + EMAIL_ICON[iconKey] + '</td>' +
+                '<td style="padding-left:10px; font-size:13px; font-weight:bold; color:#C7002C; text-transform:uppercase; letter-spacing:.03em;">' + escapeHtml(title) + '</td>' +
+            '</tr></table>' +
+        '</td></tr>' +
+        '<tr><td bgcolor="#ffffff" style="padding:0 4px 4px 4px; background:#ffffff;">' +
+            '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse; border-spacing:0; table-layout:fixed;">' + bodyRows + '</table>' +
+        '</td></tr>' +
+    '</table>';
+}
+
+function vehicleCard(v) {
+    let rows = '';
+    [['Type', v.itemType], ['Year', v.year], ['Make', v.make], ['Model', v.model]].forEach(([label, value]) => {
+        if (!value) return;
+        rows += '<tr><td style="padding:4px 0; font-size:11px; color:#999; border-bottom:1px solid #f0d3d6;">' + label + '</td><td style="padding:4px 0; font-size:12.5px; text-align:right; color:#222; border-bottom:1px solid #f0d3d6;">' + escapeHtml(value) + '</td></tr>';
+    });
+    if (v.value) {
+        rows += '<tr><td style="padding:4px 0; font-size:11px; color:#999;' + (v.vin ? ' border-bottom:1px solid #f0d3d6;' : '') + '">Value</td><td style="padding:4px 0; font-size:12.5px; text-align:right; color:#222;' + (v.vin ? ' border-bottom:1px solid #f0d3d6;' : '') + '">' + escapeHtml(v.value) + '</td></tr>';
+    }
+    if (v.vin) {
+        rows += '<tr><td style="padding:4px 0; font-size:11px; color:#999;">VIN / Serial</td><td style="padding:4px 0; font-size:12.5px; text-align:right; color:#222;">' + escapeHtml(v.vin) + '</td></tr>';
+    }
+    return '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #f0d3d6; border-collapse:collapse; border-radius:12px; background:#fffbfb; box-shadow:0 2px 6px rgba(0,0,0,0.05);">' +
+        '<tr><td style="padding:14px;">' +
+            '<span style="display:inline-block; background:#fbe4e6; color:#C7002C; font-size:10.5px; font-weight:bold; padding:4px 10px; border-radius:10px;">ITEM ' + v.index + '</span>' +
+            '<div style="font-size:15px; font-weight:bold; color:#222; margin-top:9px;">' + escapeHtml((v.year + ' ' + v.make).trim()) + '</div>' +
+            (v.model ? '<div style="font-size:12px; color:#777; margin-bottom:9px;">' + escapeHtml(v.model) + '</div>' : '<div style="margin-bottom:9px;"></div>') +
+            '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse; border-top:1px solid #f0d3d6;">' + rows + '</table>' +
+        '</td></tr>' +
+    '</table>';
+}
+
+function buildVehiclesSection(form) {
+    const vehicles = [];
+    for (let i = 1; i <= 8; i++) {
+        const it = (form.querySelector(`[name="V${i}_ItemType"]`) || {}).value || '';
+        const y = (form.querySelector(`[name="V${i}_Year"]`) || {}).value || '';
+        const mk = (form.querySelector(`[name="V${i}_Make"]`) || {}).value || '';
+        const md = (form.querySelector(`[name="V${i}_Model"]`) || {}).value || '';
+        const vl = (form.querySelector(`[name="V${i}_Value"]`) || {}).value || '';
+        const vin = (form.querySelector(`[name="V${i}_VIN"]`) || {}).value || '';
+        if (y.trim() || mk.trim() || md.trim() || vl.trim() || vin.trim()) {
+            vehicles.push({ index: i, itemType: it.trim(), year: y.trim(), make: mk.trim(), model: md.trim(), value: vl.trim(), vin: vin.trim() });
+        }
+    }
+    if (!vehicles.length) return '';
+    let cardRows = '';
+    for (let i = 0; i < vehicles.length; i += 2) {
+        cardRows += '<tr>' +
+            '<td style="width:50%; padding:6px; vertical-align:top;">' + vehicleCard(vehicles[i]) + '</td>' +
+            (vehicles[i + 1] ? '<td style="width:50%; padding:6px; vertical-align:top;">' + vehicleCard(vehicles[i + 1]) + '</td>' : '<td style="width:50%;"></td>') +
+        '</tr>';
+    }
+    return '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #e3d9da; border-collapse:collapse; border-radius:12px; margin-bottom:18px; background:#ffffff; box-shadow:0 2px 8px rgba(0,0,0,0.06);">' +
+        '<tr><td style="padding:16px 16px 8px 16px;">' +
+            '<table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse:collapse;"><tr>' +
+                '<td style="width:28px; height:28px; background:#fbe4e6; border-radius:50%; text-align:center; vertical-align:middle; font-size:13px; line-height:28px;">' + EMAIL_ICON.car + '</td>' +
+                '<td style="padding-left:10px; font-size:13px; font-weight:bold; color:#C7002C; text-transform:uppercase; letter-spacing:.03em;">Vehicles / RV Information</td>' +
+            '</tr></table>' +
+        '</td></tr>' +
+        '<tr><td style="padding:6px 10px 12px 10px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse; table-layout:fixed;">' + cardRows + '</table></td></tr>' +
+    '</table>';
+}
+
+function buildFieldsHtml(form) {
+    const val = (name) => {
+        const els = form.querySelectorAll(`[name="${name}"]`);
+        if (!els.length) return '';
+        if (els[0].type === 'radio') {
+            const checked = form.querySelector(`[name="${name}"]:checked`);
+            return checked && !checked.disabled ? checked.value : '';
+        }
+        const el = els[0];
+        if (el.disabled) return '';
+        return (el.value || '').trim();
+    };
+
+    let out = '';
+
+    out += buildEmailSection('Contact Information', 'person', [
+        { label: 'First Name', value: val('First_Name') },
+        { label: 'Last Name', value: val('Last_Name') },
+        { label: 'Phone', value: val('Phone') },
+        { label: 'Email', value: val('Email') },
+        { label: 'Preferred Contact', value: val('Preferred_Contact') }
+    ]);
+
+    out += buildEmailSection('Business Information', 'business', [
+        { label: 'Business Name', value: val('Business_Name') },
+        { label: 'DBA', value: val('DBA') },
+        { label: 'FEIN / Tax ID', value: val('FEIN') },
+        { label: 'Years in Business', value: val('Years_in_Business') },
+        { label: 'Business Address', value: val('Business_Address') },
+        { label: 'Business City', value: val('Business_City') },
+        { label: 'Business State', value: val('Business_State') },
+        { label: 'Business Zip', value: val('Business_Zip') },
+        { label: 'Business Phone', value: val('Business_Phone') },
+        { label: 'Business Email', value: val('Business_Email') },
+        { label: 'Industry / Type', value: val('Industry_Type') === 'Other' ? val('Industry_Other_Detail') : val('Industry_Type') }
+    ]);
+
+    out += buildEmailSection('Driver Information', 'id', [
+        { label: 'Driver DOB', value: val('Driver_DOB') },
+        { label: 'Driver License', value: val('Driver_License') }
+    ]);
+
+    out += buildEmailSection('Insurance History', 'id', [
+        { label: 'Currently Insured', value: val('Currently_Insured') },
+        { label: 'Current Carrier', value: val('Current_Carrier') },
+        { label: 'Claims (5 Years)', value: val('Claims_5_Years') === '0' ? 'None' : val('Claims_5_Years') },
+        { label: 'Claims Description', value: val('Claims_Description') }
+    ]);
+
+    out += buildEmailSection('Rental Property', 'home', [
+        { label: 'Property Type', value: val('Renter_Property_Type') },
+        { label: 'Unit / Apartment #', value: val('Renter_Unit') },
+        { label: 'Floor Level', value: val('Renter_Floor_Level') },
+        { label: 'Move-in Date', value: val('Renter_Move_In_Date') },
+        { label: 'Number of Occupants', value: val('Renter_Occupants') },
+        { label: 'Pets', value: val('Renter_Pets') },
+        { label: 'Smoke Detectors', value: val('Renter_Smoke_Detectors') },
+        { label: 'Security System', value: val('Renter_Security_System') }
+    ]);
+
+    out += buildEmailSection('Other Details', 'note', [
+        { label: 'Security Deposit Required', value: val('Renter_Security_Deposit') },
+        { label: 'Gated Community', value: val('Renter_Gated_Community') },
+        { label: 'Additional Notes', value: val('Renter_Additional_Notes') }
+    ]);
+
+    out += buildEmailSection('Address Information', 'pin', [
+        { label: 'Home Address', value: val('Home_Address') },
+        { label: 'Farm Address', value: val('Farm_Address') },
+        { label: 'City', value: val('City') },
+        { label: 'State', value: val('State') },
+        { label: 'Zip Code', value: val('Zip_Code') }
+    ]);
+
+    out += buildEmailSection('Property & Building Information', 'home', [
+        { label: 'Property Type', value: val('Property_Type') },
+        { label: 'Number of Units', value: val('Number_of_Units') },
+        { label: 'Currently Occupied', value: val('Property_Occupied') },
+        { label: 'Rental Type', value: val('Rental_Type') },
+        { label: 'Monthly Rental Income', value: val('Rental_Income') },
+        { label: 'HOA Name', value: val('HOA_Name') },
+        { label: 'Foundation Type', value: val('Foundation_Type') },
+        { label: 'Flood Zone', value: val('Flood_Zone') },
+        { label: 'Year Built', value: val('Year_Built') },
+        { label: 'Square Footage', value: val('Square_Footage') },
+        { label: 'Roof Year', value: val('Roof_Year') },
+        { label: 'Construction Type', value: val('Construction_Type') },
+        { label: 'Electrical Updates', value: val('Electrical_Updates') },
+        { label: 'Electrical Update Year', value: val('Electrical_Update_Year') }
+    ]);
+
+    out += buildEmailSection('Umbrella Coverage Preferences', 'home', [
+        { label: 'Has Home/Renters Policy', value: val('Umbrella_Home_Policy') },
+        { label: 'Has Auto Policy', value: val('Umbrella_Auto_Policy') },
+        { label: 'Vehicles in Household', value: val('Umbrella_Vehicle_Count') },
+        { label: 'Licensed Drivers', value: val('Umbrella_Driver_Count') },
+        { label: 'Desired Coverage Amount', value: val('Umbrella_Coverage_Amount') },
+        { label: 'Owns Rental Property', value: val('Umbrella_Rental_Property') },
+        { label: 'Watercraft / RV', value: val('Umbrella_Watercraft_RV') }
+    ]);
+
+    out += buildVehiclesSection(form);
+
+    const interests = [];
+    form.querySelectorAll('input[name="Interest[]"]:checked').forEach(el => interests.push(el.value));
+    if (interests.length) {
+        out += buildEmailSection('Interested In', 'note', [{ label: 'Categories', value: interests.join(', ') }]);
+    }
+
+    out += buildEmailSection('Additional Notes', 'note', [{ label: 'Notes', value: val('Additional_Notes') }]);
+
+    return out || '<p style="color:#999;">No additional details provided.</p>';
+}
+function buildReview() {
+    renderBreadcrumb(mainCategoryInput.value, document.getElementById('reviewCategoryBadge'));
+    document.getElementById('reviewFieldsWrap').innerHTML = buildFieldsHtml(document.getElementById('quoteForm'));
+}
+
+// ---------- Submit ----------
+const form = document.getElementById('quoteForm');
+form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    if (ownerZipState.expectedCity && !document.getElementById('zipCode').disabled) {
+        const typedCity = (form.City.value || '').trim().toLowerCase();
+        if (typedCity !== ownerZipState.expectedCity) {
+            document.getElementById('formMsg').textContent = `City doesn't match the ZIP code entered. Expected city: ${ownerZipState.expectedCityDisplay}`;
+            return;
+        }
+    }
+    if (businessZipState.expectedCity && !document.getElementById('businessZipCode').disabled) {
+        const typedBizCity = (document.getElementById('businessCityField').value || '').trim().toLowerCase();
+        if (typedBizCity !== businessZipState.expectedCityDisplay.toLowerCase()) {
+            document.getElementById('formMsg').textContent = `Business city doesn't match the ZIP code entered. Expected city: ${businessZipState.expectedCityDisplay}`;
+            return;
+        }
+    }
+    document.getElementById('formMsg').textContent = '';
+
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    document.querySelectorAll('.progress-step[data-step="4"]').forEach(el => el.classList.add('active'));
+
+    const templateParams = {
+        insurance_category: CATEGORY_LABELS[mainCategoryInput.value] || mainCategoryInput.value,
+        from_name: (form.First_Name.value + ' ' + form.Last_Name.value + ' - Website Quote'),
+        first_name: form.First_Name ? form.First_Name.value : '',
+        phone: form.Phone ? form.Phone.value : '',
+        email: form.Email ? form.Email.value : '',
+        time: new Date().toLocaleString('en-US', { timeZone: 'America/Chicago', dateStyle: 'medium', timeStyle: 'short' }),
+        fields_html: buildFieldsHtml(form)
+    };
+
+    try {
+        await emailjs.send('service_7ppceyp', 'template_hhvep0t', templateParams);
+        showThankyouModal();
+        form.reset();
+        vehicleWrapper.innerHTML = '';
+        vehicleCount = 0;
+        ownerZipState.expectedCity = null;
+        businessZipState.expectedCity = null;
+        clearDraft();
+        parentGrid.style.display = 'grid';
+        subGrid.style.display = 'none';
+        document.querySelectorAll('.parent-card, .category-card').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.conditional').forEach(el => { el.style.display = 'none'; el.querySelectorAll('input,select,textarea').forEach(i => i.disabled = true); });
+        showPage('coverage');
+    } catch (error) {
+        console.error('EmailJS error:', error);
+        alert('Something went wrong sending your request. Please try again or call us directly.');
+    } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
+});
+
+// ---------- Autosave ----------
+const DRAFT_KEY = 'sandoval_quote_draft_v1';
+let autosaveTimer = null;
+
+function collectFormSnapshot() {
+    const data = { category: mainCategoryInput.value, page: currentPage, partIndex: currentPartIndex, fields: {}, interests: [], vehicleCount: vehicleCount, ts: Date.now() };
+    form.querySelectorAll('input, select, textarea').forEach(el => {
+        if (!el.name) return;
+        if (el.type === 'checkbox') {
+            if (el.name === 'Interest[]') { if (el.checked) data.interests.push(el.value); return; }
+            data.fields[el.name] = el.checked;
+        } else if (el.type === 'radio') {
+            if (el.checked) data.fields[el.name] = el.value;
+        } else {
+            data.fields[el.name] = el.value;
+        }
+    });
+    return data;
+}
+function saveDraft() {
+    if (!mainCategoryInput.value) return;
+    try { localStorage.setItem(DRAFT_KEY, JSON.stringify(collectFormSnapshot())); } catch (e) {}
+}
+function scheduleAutosave() {
+    clearTimeout(autosaveTimer);
+    autosaveTimer = setTimeout(saveDraft, 600);
+}
+form.addEventListener('input', scheduleAutosave);
+form.addEventListener('change', scheduleAutosave);
+form.addEventListener('focusout', updateFieldCheckmarks);
+form.addEventListener('change', updateFieldCheckmarks);
+function clearDraft() { try { localStorage.removeItem(DRAFT_KEY); } catch (e) {} }
+
+function restoreDraft(data) {
+    if (!data.category) return;
+    selectCategory(data.category);
+    while (vehicleCount < (data.vehicleCount || 1)) { vehicleCount++; createVehicleFields(vehicleCount); }
+    Object.keys(data.fields).forEach(name => {
+        const els = form.querySelectorAll(`[name="${CSS.escape(name)}"]`);
+        if (!els.length || els[0].disabled) return;
+        if (els[0].type === 'checkbox') { els[0].checked = !!data.fields[name]; }
+        else if (els[0].type === 'radio') { els.forEach(r => { r.checked = (r.value === data.fields[name]); }); }
+        else { els[0].value = data.fields[name]; }
+    });
+    (data.interests || []).forEach(val => {
+        const el = form.querySelector(`input[name="Interest[]"][value="${CSS.escape(val)}"]`);
+        if (el) el.checked = true;
+    });
+    const electricalChecked = form.querySelector('input[name="Electrical_Updates"]:checked'); if (electricalChecked) toggleElectrical(electricalChecked);
+    const claimsSel = form.querySelector('select[name="Claims_5_Years"]'); if (claimsSel) toggleClaims(claimsSel);
+    const insuredSel = form.querySelector('select[name="Currently_Insured"]'); if (insuredSel) toggleCurrentCarrier(insuredSel);
+    const industrySel = document.getElementById('industrySelect'); if (industrySel) toggleIndustryOther(industrySel);
+    const sameBizChk = document.getElementById('sameAsBusinessCheck');
+    if (sameBizChk && sameBizChk.checked) toggleSameAsBusiness(sameBizChk);
+
+    computeActiveParts();
+    updateFieldCheckmarks();
+    if (data.page === 'review') {
+        showDetailPart(activeParts.length - 1);
+        buildReview();
+        showPage('review');
+    } else if (data.page === 'details') {
+        showDetailPart(Math.min(data.partIndex || 0, activeParts.length - 1));
+        showPage('details');
+    } else {
+        showPage('coverage');
+        const parentKey = getParentKey(data.category);
+        if (parentKey) openSubGrid(parentKey);
+    }
+}
+
+(function checkDraft() {
+    try {
+        const raw = localStorage.getItem(DRAFT_KEY);
+        if (!raw) return;
+        const data = JSON.parse(raw);
+        if (!data || !data.category) return;
+        const ageDays = (Date.now() - (data.ts || 0)) / 86400000;
+        if (ageDays > 7) { clearDraft(); return; }
+        const banner = document.createElement('div');
+        banner.className = 'draft-banner';
+        banner.innerHTML = '<span>We saved your progress from last time.</span><div class="draft-banner-actions"><button type="button" id="resumeDraftBtn" class="btn-primary">Resume</button><button type="button" id="dismissDraftBtn" class="btn-secondary">Start Fresh</button></div>';
+        document.querySelector('.qc-header').insertAdjacentElement('afterend', banner);
+        document.getElementById('resumeDraftBtn').addEventListener('click', () => { restoreDraft(data); banner.remove(); });
+        document.getElementById('dismissDraftBtn').addEventListener('click', () => { clearDraft(); banner.remove(); });
+    } catch (e) {}
+})();
+
+updateFieldCheckmarks();
+showPage('coverage');
+</script>
